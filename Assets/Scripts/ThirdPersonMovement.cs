@@ -6,7 +6,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    public float speed = 6f;
+    public float speed = 15f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -30,7 +30,7 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         // Jump
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -60,5 +60,10 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+    }
+
+    public float getSpeed()
+    {
+        return speed;
     }
 }
