@@ -41,7 +41,7 @@ public class Enemy1 : MonoBehaviour
         {
             agent.SetDestination(target.position);
             agent.updateRotation = true;
-            Debug.Log(distance);
+            //Debug.Log(distance);
             if (distance <= stoppingDistance)
             {
                 //agent.SetDestination(transform.position);
