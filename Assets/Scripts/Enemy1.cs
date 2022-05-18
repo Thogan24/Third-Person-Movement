@@ -9,7 +9,8 @@ public class Enemy1 : MonoBehaviour
     // Attacking Variables
     public int bossHealth = 100;
     public int damageAmount;
-    public int damageCooldown;
+    public int attackCooldown;
+    
     //public Collider collider;
 
     // AI Variables
@@ -47,7 +48,10 @@ public class Enemy1 : MonoBehaviour
                 //agent.SetDestination(transform.position);
                 agent.updatePosition = false;
 
-                //Attack the target
+                if (attackCooldown <= 0f) // If the attack cooldown is finished
+                {
+                    Attack();
+                }
                 //Look at the target potentially needed
             }
             else

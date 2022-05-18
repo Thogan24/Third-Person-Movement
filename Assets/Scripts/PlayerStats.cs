@@ -9,21 +9,21 @@ public class PlayerStats : MonoBehaviour
     public GameObject sword;
     public PostProcessVolume volume;
     public LensDistortion lensDistortion;
-    public Grain grain;
+    //public Grain grain;
     public Vignette vignette;
     public ChromaticAberration chromaticAberration;
     public int playerHealth = 50;
-    public GameObject swordHitParticle;
+    public ParticleSystem swordHitParticle;
 
 
     private void Start()
     {
         volume.profile.TryGetSettings(out lensDistortion);
-        volume.profile.TryGetSettings(out grain);
+        //volume.profile.TryGetSettings(out grain);
         volume.profile.TryGetSettings(out vignette);
         volume.profile.TryGetSettings(out chromaticAberration);
         lensDistortion.active = false;
-        grain.active = false;
+        //grain.active = false;
         vignette.active = false;
         chromaticAberration.active = false;
     }
@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour
 
                 // Effects
                 lensDistortion.active = true;
-                grain.active = true;
+                //grain.active = true;
                 vignette.active = true;
                 chromaticAberration.active = true;
                 player.GetComponent<ThirdPersonMovement>().speed = 100f;
@@ -50,11 +50,12 @@ public class PlayerStats : MonoBehaviour
         if (player.transform.GetComponent<Collider>().bounds.Intersects(sword.GetComponent<Collider>().bounds)){
             Debug.Log(playerHealth);
             playerHealth -= 10;
-            swordHitParticle.SetActive(true);
+            swordHitParticle.startSize = 1;
         }
         else
         {
-            swordHitParticle.SetActive(false);
+            swordHitParticle.startSize = 0;
         }
+        
     }
 }
