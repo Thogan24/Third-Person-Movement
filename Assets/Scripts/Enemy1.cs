@@ -18,24 +18,39 @@ public class Enemy1 : MonoBehaviour
     public float stoppingDistance = 5f;
     public NavMeshAgent agent;
     Transform target;
+    public float rayDistance = 12f;
 
-
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         target = PlayerManager.instance.player.transform;
-        //Debug.Log(target);
         agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // look at player
-        //transform.LookAt(player.transform);
-        //transform.rotation = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+        
+       /* RaycastHit hit;
+        Ray groundRay = new Ray(transform.position, Vector3.down);
+        Debug.Log(groundRay);
+        if (Physics.Raycast(groundRay, out hit, rayDistance))
+        {
+            Debug.Log("Hitting something just not tagged ground");
+            if (hit.collider.tag == "Ground")
 
-        //follow the player
+            {
+                //Debug.Log("it should work");
+                Debug.Log(hit.distance);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - hit.distance + 0.5f);
+            }
+        }
+        else
+        {
+            //Debug.Log("Not hitting anything");
+        }*/
+
+
+
+        // Follows player
         float distance = Vector3.Distance(target.position, transform.position);
 
         if (distance <= lookRadius)
@@ -45,14 +60,13 @@ public class Enemy1 : MonoBehaviour
             //Debug.Log(distance);
             if (distance <= stoppingDistance)
             {
-                //agent.SetDestination(transform.position);
                 agent.updatePosition = false;
 
                 if (attackCooldown <= 0f) // If the attack cooldown is finished
                 {
                     Attack();
                 }
-                //Look at the target potentially needed
+                // TODO Look at the target
             }
             else
             {
@@ -73,18 +87,19 @@ public class Enemy1 : MonoBehaviour
         // dissapear and animation
         Destroy(gameObject);
     }
-    void TakeDamage()
+    public void TakeDamage()
     {
+        Debug.Log(bossHealth);
         bossHealth--;
     }
-
     void Attack()
     {
-
+        //TODO Play animation
     }
-
+    
     void OnDrawGizmosSelected()
     {
+        // Draws look radius
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
