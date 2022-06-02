@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 214434496}
   - component: {fileID: 214434498}
   m_Layer: 0
-  m_Name: ThirdPersonCamera
+  m_Name: Third Person Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 291970895}
   - component: {fileID: 291970897}
   m_Layer: 9
-  m_Name: ThirdPersonPlayer
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1235,8 +1235,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294918656
+  m_fontColor: {r: 0, g: 0.25932264, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11455,6 +11455,7 @@ MonoBehaviour:
   Offset: {x: 1, y: 0, z: 2}
   startingAttackCooldown: 0.1
   attackCooldown: 0
+  bananaReference: {fileID: 0}
 --- !u!4 &609519167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 272a5609ccf85f04a9912beaff95b0eb, type: 3}
@@ -12983,7 +12984,7 @@ GameObject:
   - component: {fileID: 1233378617}
   - component: {fileID: 1233378616}
   m_Layer: 5
-  m_Name: MainUI
+  m_Name: Main UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13355,12 +13356,12 @@ GameObject:
   - component: {fileID: 1535483915}
   - component: {fileID: 1535483914}
   m_Layer: 5
-  m_Name: PauseMenuPanal
+  m_Name: Pause Menu Panal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1535483913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13396,7 +13397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.27450982}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14120,8 +14121,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14468,7 +14469,7 @@ GameObject:
   - component: {fileID: 1844762695}
   - component: {fileID: 1844762699}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15013,7 +15014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6839533, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.2627451, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15345,6 +15346,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BananaPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8953973511587552462, guid: f8856a63d4de3c34db6c10e14f2488d2, type: 3}
+      propertyPath: monkey
+      value: 
+      objectReference: {fileID: 609519163}
+    - target: {fileID: 8953973511587552462, guid: f8856a63d4de3c34db6c10e14f2488d2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 291970893}
     - target: {fileID: 8953973511587552462, guid: f8856a63d4de3c34db6c10e14f2488d2, type: 3}
       propertyPath: lifetime
       value: 5

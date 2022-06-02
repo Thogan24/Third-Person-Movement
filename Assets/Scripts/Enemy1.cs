@@ -95,6 +95,7 @@ public class Enemy1 : MonoBehaviour
     void Attack()
     {
         //TODO Play animation
+        //TODO Swing sword towards him
     }
     
     void OnDrawGizmosSelected()

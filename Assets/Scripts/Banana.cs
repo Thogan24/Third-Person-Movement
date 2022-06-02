@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Banana : MonoBehaviour
 {
-    [SerializeField] private float power = 1500;
-    [SerializeField] private float lifetime = 5;
-    // Start is called before the first frame update
+    // change power dependant on speed??
+    public GameObject player;
+    
+    [SerializeField] private float power = 1500f;
+    [SerializeField] private float lifetime = 5f;
+    public GameObject monkey;
     void Start()
     {
+        lifetime = 5f;
         transform.SetParent(null);
         GetComponent<Rigidbody>().AddForce(power * -transform.up);
 
@@ -27,7 +31,7 @@ public class Banana : MonoBehaviour
 
         if (lifetime <= 0)
         {
-            Destroy(this);
+            //Destroy(monkey.GetComponent<MonkeyGun>().bananaGetter());
         }
     }
 

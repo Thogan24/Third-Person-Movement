@@ -11,6 +11,7 @@ public class MonkeyGun : MonoBehaviour
     [SerializeField] private float startingAttackCooldown = 0.1f;
     [SerializeField] private float attackCooldown;
     private bool CanAttack;
+    public GameObject bananaReference;
 
     private void Start()
     {
@@ -47,12 +48,17 @@ public class MonkeyGun : MonoBehaviour
     public void monkeyShoot()
     {
         CanAttack = false;
-        
-        Instantiate(banana, transform.position, transform.rotation);
+        // Maybe use an array because there are multiple objects??
+        bananaReference = Instantiate(banana, transform.position, transform.rotation);
         shootParticles.startSize = 1;
         //Instantiate(banana, transform);
         //Animator anim = monkeyGun.GetComponent<Animator>();
         //anim.SetTrigger("Attack");
+    }
+
+    public GameObject bananaGetter()
+    {
+        return bananaReference;
     }
 
 }
